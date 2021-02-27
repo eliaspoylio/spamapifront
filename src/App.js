@@ -2,12 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import './App.css';
 
 function getAll() {
-  return fetch('https://localhost:44395/api/Messages/')
+  return fetch('https://spamapi.azurewebsites.net/api/Messages/')
     .then(data => data.json())
 }
 
 function getId(id) {
-  return fetch('https://localhost:44395/api/Messages/' + id)
+  return fetch('https://spamapi.azurewebsites.net/api/Messages/' + id)
     .then(data => data.json())
 }
 
@@ -66,7 +66,7 @@ function App() {
           I'm collecting junk mail data for future purposes. This page makes requests to an API serving a portion of that data.
         </p>
         <p>
-          One future purpose for the API could be training a neural network for spam detection. There's some "finnish" spamming included so there's a certain lingual aspect to this.
+          One future purpose for the API could be f.ex. to serve as a tool for training a neural network for spam detection. There's some "finnish" spamming included so there's a certain lingual aspect to this.
         </p>
         <p>
           There's {sum} entries in the DB.
